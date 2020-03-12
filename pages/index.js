@@ -5,6 +5,11 @@ const Index = () => {
       <a href="https://covid-19.dava.engineer/api/graphql">
         https://covid-19.dava.engineer/api/graphql
       </a>
+      <br />
+      <br />
+      <div>Coming Soon - React + Next + Hooks API + Apollo GraphQL</div>
+      <br />
+      Follow me: <a href="https://twitter.com/DavaEngineer">@DavaEngineer</a>
     </div>
   );
 };
