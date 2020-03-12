@@ -25,6 +25,15 @@ class Covid19API extends RESTDataSource {
       recovered: confirmed.recovered
     };
   }
+
+  async getCount() {
+    const response = await this.get("/");
+    return {
+      confirmed: response.confirmed.value,
+      recovered: response.recovered.value,
+      deaths: response.deaths.value
+    };
+  }
 }
 
 module.exports = Covid19API;
