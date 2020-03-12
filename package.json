@@ -1,0 +1,30 @@
+{
+  "name": "covid-19",
+  "version": "1.0.0",
+  "description": "Covid-19",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavaEngineer/covid-19.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavaEngineer/covid-19/issues"
+  },
+  "homepage": "https://github.com/DavaEngineer/covid-19#readme",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.8.0",
+    "apollo-server-micro": "^2.11.0",
+    "graphql": "^14.6.0",
+    "next": "^9.3.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  }
+}
