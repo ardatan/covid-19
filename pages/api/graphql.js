@@ -11,6 +11,18 @@ const typeDefs = gql`
     deaths: Int
   }
 
+  type Daily {
+    reportDate: Date
+    mainlandChina: Int
+    otherLocations: Int
+    totalConfirmed: Int
+    totalRecovered: Int
+    reportDateString: String
+    deltaConfirmed: Int
+    deltaRecovered: Int
+    objectid: Int
+  }
+
   type Case {
     provinceState: String
     countryRegion: String
@@ -25,6 +37,7 @@ const typeDefs = gql`
   type Query {
     cases: [Case]
     case(countryRegion: String): Case
+    daily: [Daily]
     count: Count
   }
 `;
@@ -38,6 +51,9 @@ const resolvers = {
       return find(await dataSources.covid19API.getAllCases(), {
         countryRegion: args.countryRegion
       });
+    },
+    daily: (_, args, { dataSources }) => {
+      return dataSources.covid19API.getDaily();
     },
     count: async (_, args, { dataSources }) => {
       return dataSources.covid19API.getCount();

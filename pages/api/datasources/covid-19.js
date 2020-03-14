@@ -34,6 +34,27 @@ class Covid19API extends RESTDataSource {
       deaths: response.deaths.value
     };
   }
+
+  async getDaily() {
+    const response = await this.get("daily");
+    return Array.isArray(response)
+      ? response.map(daily => this.dailyReducer(daily))
+      : [];
+  }
+
+  dailyReducer(daily) {
+    return {
+      reportDate: daily.reportDate,
+      mainlandChina: daily.mainlandChina,
+      otherLocations: daily.otherLocations,
+      totalConfirmed: daily.totalConfirmed,
+      totalRecovered: daily.totalRecovered,
+      reportDateString: daily.reportDateString,
+      deltaConfirmed: daily.deltaConfirmed,
+      deltaRecovered: daily.deltaRecovered,
+      objectid: daily.objectid
+    };
+  }
 }
 
 module.exports = Covid19API;
