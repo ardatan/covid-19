@@ -30,8 +30,14 @@ const typeDefs = gql`
     lat: Float
     long: Float
     confirmed: Int
-    deaths: Int
     recovered: Int
+    deaths: Int
+    active: Int
+    admin2: Int
+    fips: Int
+    combinedKey: Int
+    iso2: String
+    iso3: String
   }
 
   type Query {

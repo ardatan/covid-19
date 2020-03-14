@@ -21,8 +21,14 @@ class Covid19API extends RESTDataSource {
       lat: confirmed.lat,
       long: confirmed.long,
       confirmed: confirmed.confirmed,
+      recovered: confirmed.recovered,
       deaths: confirmed.deaths,
-      recovered: confirmed.recovered
+      active: confirmed.active,
+      admin2: confirmed.admin2,
+      fips: confirmed.fips,
+      combinedKey: confirmed.combinedKey,
+      iso2: confirmed.iso2,
+      iso3: confirmed.iso3
     };
   }
 
